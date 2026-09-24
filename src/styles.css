@@ -182,6 +182,7 @@ em { font-weight: 400; }
 .chapter-list-item:first-child { border-top: 0; padding-top: 0; }
 .chapter-list-item:last-child { padding-bottom: 0; }
 .chapter-list-item img, .chapter-list-item .item-placeholder { width: 58px; height: 58px; object-fit: cover; border-radius: 3px; background: var(--soft-pink); flex: 0 0 auto; display: grid; place-items: center; color: var(--rose); }
+.chapter-list-item img.mood-symbol { width: 14px; height: 14px; display: inline-block; vertical-align: -3px; margin: 0 2px 0 0; background: transparent; border-radius: 0; }
 .chapter-list-item div:nth-child(2) { min-width: 0; }
 .chapter-list-item strong { font: 500 15px var(--font-display); display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .chapter-list-item small { display: block; color: var(--muted-foreground); font-size: 10px; margin-top: 5px; }
