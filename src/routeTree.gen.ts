@@ -10,33 +10,267 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ChaptersRouteImport } from './routes/chapters'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as LettersRouteImport } from './routes/letters'
+import { Route as MemoriesRouteImport } from './routes/memories'
+import { Route as MoodsRouteImport } from './routes/moods'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ReflectionRouteImport } from './routes/reflection'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ChaptersIndexRouteImport } from './routes/chapters.index'
+import { Route as ChaptersIdRouteImport } from './routes/chapters.$id'
+import { Route as ChaptersNewRouteImport } from './routes/chapters.new'
+import { Route as LettersIndexRouteImport } from './routes/letters.index'
+import { Route as LettersNewRouteImport } from './routes/letters.new'
+import { Route as MemoriesIndexRouteImport } from './routes/memories.index'
+import { Route as MemoriesNewRouteImport } from './routes/memories.new'
+import { Route as ChaptersIdIndexRouteImport } from './routes/chapters.$id.index'
+import { Route as ChaptersIdEditRouteImport } from './routes/chapters.$id.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChaptersRoute = ChaptersRouteImport.update({
+  id: '/chapters',
+  path: '/chapters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LettersRoute = LettersRouteImport.update({
+  id: '/letters',
+  path: '/letters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemoriesRoute = MemoriesRouteImport.update({
+  id: '/memories',
+  path: '/memories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoodsRoute = MoodsRouteImport.update({
+  id: '/moods',
+  path: '/moods',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReflectionRoute = ReflectionRouteImport.update({
+  id: '/reflection',
+  path: '/reflection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChaptersIndexRoute = ChaptersIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ChaptersRoute,
+} as any)
+const ChaptersIdRoute = ChaptersIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ChaptersRoute,
+} as any)
+const ChaptersNewRoute = ChaptersNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => ChaptersRoute,
+} as any)
+const LettersIndexRoute = LettersIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LettersRoute,
+} as any)
+const LettersNewRoute = LettersNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => LettersRoute,
+} as any)
+const MemoriesIndexRoute = MemoriesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MemoriesRoute,
+} as any)
+const MemoriesNewRoute = MemoriesNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => MemoriesRoute,
+} as any)
+const ChaptersIdIndexRoute = ChaptersIdIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ChaptersIdRoute,
+} as any)
+const ChaptersIdEditRoute = ChaptersIdEditRouteImport.update({
+  id: '/edit',
+  path: '/edit',
+  getParentRoute: () => ChaptersIdRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/chapters': typeof ChaptersRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/features': typeof FeaturesRoute
+  '/letters': typeof LettersRouteWithChildren
+  '/memories': typeof MemoriesRouteWithChildren
+  '/moods': typeof MoodsRoute
+  '/profile': typeof ProfileRoute
+  '/reflection': typeof ReflectionRoute
+  '/settings': typeof SettingsRoute
+  '/chapters/$id': typeof ChaptersIdRouteWithChildren
+  '/chapters/new': typeof ChaptersNewRoute
+  '/letters/new': typeof LettersNewRoute
+  '/memories/new': typeof MemoriesNewRoute
+  '/chapters/': typeof ChaptersIndexRoute
+  '/letters/': typeof LettersIndexRoute
+  '/memories/': typeof MemoriesIndexRoute
+  '/chapters/$id/edit': typeof ChaptersIdEditRoute
+  '/chapters/$id/': typeof ChaptersIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/dashboard': typeof DashboardRoute
+  '/features': typeof FeaturesRoute
+  '/moods': typeof MoodsRoute
+  '/profile': typeof ProfileRoute
+  '/reflection': typeof ReflectionRoute
+  '/settings': typeof SettingsRoute
+  '/chapters/new': typeof ChaptersNewRoute
+  '/letters/new': typeof LettersNewRoute
+  '/memories/new': typeof MemoriesNewRoute
+  '/chapters': typeof ChaptersIndexRoute
+  '/letters': typeof LettersIndexRoute
+  '/memories': typeof MemoriesIndexRoute
+  '/chapters/$id/edit': typeof ChaptersIdEditRoute
+  '/chapters/$id': typeof ChaptersIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/chapters': typeof ChaptersRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/features': typeof FeaturesRoute
+  '/letters': typeof LettersRouteWithChildren
+  '/memories': typeof MemoriesRouteWithChildren
+  '/moods': typeof MoodsRoute
+  '/profile': typeof ProfileRoute
+  '/reflection': typeof ReflectionRoute
+  '/settings': typeof SettingsRoute
+  '/chapters/$id': typeof ChaptersIdRouteWithChildren
+  '/chapters/new': typeof ChaptersNewRoute
+  '/letters/new': typeof LettersNewRoute
+  '/memories/new': typeof MemoriesNewRoute
+  '/chapters/': typeof ChaptersIndexRoute
+  '/letters/': typeof LettersIndexRoute
+  '/memories/': typeof MemoriesIndexRoute
+  '/chapters/$id/edit': typeof ChaptersIdEditRoute
+  '/chapters/$id/': typeof ChaptersIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/chapters'
+    | '/dashboard'
+    | '/features'
+    | '/letters'
+    | '/memories'
+    | '/moods'
+    | '/profile'
+    | '/reflection'
+    | '/settings'
+    | '/chapters/$id'
+    | '/chapters/new'
+    | '/letters/new'
+    | '/memories/new'
+    | '/chapters/'
+    | '/letters/'
+    | '/memories/'
+    | '/chapters/$id/edit'
+    | '/chapters/$id/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/dashboard'
+    | '/features'
+    | '/moods'
+    | '/profile'
+    | '/reflection'
+    | '/settings'
+    | '/chapters/new'
+    | '/letters/new'
+    | '/memories/new'
+    | '/chapters'
+    | '/letters'
+    | '/memories'
+    | '/chapters/$id/edit'
+    | '/chapters/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/chapters'
+    | '/dashboard'
+    | '/features'
+    | '/letters'
+    | '/memories'
+    | '/moods'
+    | '/profile'
+    | '/reflection'
+    | '/settings'
+    | '/chapters/$id'
+    | '/chapters/new'
+    | '/letters/new'
+    | '/memories/new'
+    | '/chapters/'
+    | '/letters/'
+    | '/memories/'
+    | '/chapters/$id/edit'
+    | '/chapters/$id/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ChaptersRoute: typeof ChaptersRouteWithChildren
+  DashboardRoute: typeof DashboardRoute
+  FeaturesRoute: typeof FeaturesRoute
+  LettersRoute: typeof LettersRouteWithChildren
+  MemoriesRoute: typeof MemoriesRouteWithChildren
+  MoodsRoute: typeof MoodsRoute
+  ProfileRoute: typeof ProfileRoute
+  ReflectionRoute: typeof ReflectionRoute
+  SettingsRoute: typeof SettingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +282,211 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chapters': {
+      id: '/chapters'
+      path: '/chapters'
+      fullPath: '/chapters'
+      preLoaderRoute: typeof ChaptersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/letters': {
+      id: '/letters'
+      path: '/letters'
+      fullPath: '/letters'
+      preLoaderRoute: typeof LettersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/memories': {
+      id: '/memories'
+      path: '/memories'
+      fullPath: '/memories'
+      preLoaderRoute: typeof MemoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/moods': {
+      id: '/moods'
+      path: '/moods'
+      fullPath: '/moods'
+      preLoaderRoute: typeof MoodsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reflection': {
+      id: '/reflection'
+      path: '/reflection'
+      fullPath: '/reflection'
+      preLoaderRoute: typeof ReflectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chapters/': {
+      id: '/chapters/'
+      path: '/'
+      fullPath: '/chapters/'
+      preLoaderRoute: typeof ChaptersIndexRouteImport
+      parentRoute: typeof ChaptersRoute
+    }
+    '/chapters/$id': {
+      id: '/chapters/$id'
+      path: '/$id'
+      fullPath: '/chapters/$id'
+      preLoaderRoute: typeof ChaptersIdRouteImport
+      parentRoute: typeof ChaptersRoute
+    }
+    '/chapters/new': {
+      id: '/chapters/new'
+      path: '/new'
+      fullPath: '/chapters/new'
+      preLoaderRoute: typeof ChaptersNewRouteImport
+      parentRoute: typeof ChaptersRoute
+    }
+    '/letters/': {
+      id: '/letters/'
+      path: '/'
+      fullPath: '/letters/'
+      preLoaderRoute: typeof LettersIndexRouteImport
+      parentRoute: typeof LettersRoute
+    }
+    '/letters/new': {
+      id: '/letters/new'
+      path: '/new'
+      fullPath: '/letters/new'
+      preLoaderRoute: typeof LettersNewRouteImport
+      parentRoute: typeof LettersRoute
+    }
+    '/memories/': {
+      id: '/memories/'
+      path: '/'
+      fullPath: '/memories/'
+      preLoaderRoute: typeof MemoriesIndexRouteImport
+      parentRoute: typeof MemoriesRoute
+    }
+    '/memories/new': {
+      id: '/memories/new'
+      path: '/new'
+      fullPath: '/memories/new'
+      preLoaderRoute: typeof MemoriesNewRouteImport
+      parentRoute: typeof MemoriesRoute
+    }
+    '/chapters/$id/': {
+      id: '/chapters/$id/'
+      path: '/'
+      fullPath: '/chapters/$id/'
+      preLoaderRoute: typeof ChaptersIdIndexRouteImport
+      parentRoute: typeof ChaptersIdRoute
+    }
+    '/chapters/$id/edit': {
+      id: '/chapters/$id/edit'
+      path: '/edit'
+      fullPath: '/chapters/$id/edit'
+      preLoaderRoute: typeof ChaptersIdEditRouteImport
+      parentRoute: typeof ChaptersIdRoute
+    }
   }
 }
 
+interface ChaptersIdRouteChildren {
+  ChaptersIdEditRoute: typeof ChaptersIdEditRoute
+  ChaptersIdIndexRoute: typeof ChaptersIdIndexRoute
+}
+
+const ChaptersIdRouteChildren: ChaptersIdRouteChildren = {
+  ChaptersIdEditRoute: ChaptersIdEditRoute,
+  ChaptersIdIndexRoute: ChaptersIdIndexRoute,
+}
+
+const ChaptersIdRouteWithChildren = ChaptersIdRoute._addFileChildren(
+  ChaptersIdRouteChildren,
+)
+
+interface ChaptersRouteChildren {
+  ChaptersIdRoute: typeof ChaptersIdRouteWithChildren
+  ChaptersNewRoute: typeof ChaptersNewRoute
+  ChaptersIndexRoute: typeof ChaptersIndexRoute
+}
+
+const ChaptersRouteChildren: ChaptersRouteChildren = {
+  ChaptersIdRoute: ChaptersIdRouteWithChildren,
+  ChaptersNewRoute: ChaptersNewRoute,
+  ChaptersIndexRoute: ChaptersIndexRoute,
+}
+
+const ChaptersRouteWithChildren = ChaptersRoute._addFileChildren(
+  ChaptersRouteChildren,
+)
+
+interface LettersRouteChildren {
+  LettersNewRoute: typeof LettersNewRoute
+  LettersIndexRoute: typeof LettersIndexRoute
+}
+
+const LettersRouteChildren: LettersRouteChildren = {
+  LettersNewRoute: LettersNewRoute,
+  LettersIndexRoute: LettersIndexRoute,
+}
+
+const LettersRouteWithChildren =
+  LettersRoute._addFileChildren(LettersRouteChildren)
+
+interface MemoriesRouteChildren {
+  MemoriesNewRoute: typeof MemoriesNewRoute
+  MemoriesIndexRoute: typeof MemoriesIndexRoute
+}
+
+const MemoriesRouteChildren: MemoriesRouteChildren = {
+  MemoriesNewRoute: MemoriesNewRoute,
+  MemoriesIndexRoute: MemoriesIndexRoute,
+}
+
+const MemoriesRouteWithChildren = MemoriesRoute._addFileChildren(
+  MemoriesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ChaptersRoute: ChaptersRouteWithChildren,
+  DashboardRoute: DashboardRoute,
+  FeaturesRoute: FeaturesRoute,
+  LettersRoute: LettersRouteWithChildren,
+  MemoriesRoute: MemoriesRouteWithChildren,
+  MoodsRoute: MoodsRoute,
+  ProfileRoute: ProfileRoute,
+  ReflectionRoute: ReflectionRoute,
+  SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
